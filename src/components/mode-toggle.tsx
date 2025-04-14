@@ -18,7 +18,7 @@ export function ModeToggle() {
         <Button
           variant="outline"
           size="icon"
-          className="!bg-transparent scale-150"
+          className="!bg-transparent scale-125"
         >
           <Sun
             onClick={() => toast('Event has been created')}

@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
+#hide-overflow {
+  overflow-x: hidden !important;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -179,6 +185,9 @@ button:focus-visible {
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html {
+    @apply w-full overflow-x-hidden; /* Add these */
   }
   body {
     @apply bg-background text-foreground;

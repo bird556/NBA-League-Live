@@ -6,18 +6,29 @@ import { ModeToggle } from './components/mode-toggle';
 import HeaderScores from './components/HeaderScores';
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <BrowserRouter>
-        <HeaderScores />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-      <div className="fixed bottom-10 left-10">
-        <ModeToggle />
-      </div>
-    </ThemeProvider>
+    <div className="relative">
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <BrowserRouter>
+          <div className="relative min-h-screen transition delay-150 duration-300">
+            {' '}
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-50 w-full">
+              {' '}
+              {/* Added z-50 and w-full */}
+              <HeaderScores />
+            </div>
+            {/* Main Content */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+            {/* Mode Toggle */}
+            <div className="fixed bottom-10 left-10">
+              <ModeToggle />
+            </div>
+          </div>
+        </BrowserRouter>
+      </ThemeProvider>
+    </div>
   );
 }
 
