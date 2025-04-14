@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { ModeToggle } from './components/mode-toggle';
 import HeaderScores from './components/HeaderScores';
+import LeagueLeaders from './components/Header/LeagueLeaders/LeagueLeaders';
 function App() {
   return (
     <div className="relative">
@@ -22,9 +23,10 @@ function App() {
               <Route path="/" element={<Home />} />
             </Routes>
             {/* Mode Toggle */}
-            <div className="fixed bottom-10 left-10">
+            {/* <div className="fixed bottom-10 left-10">
               <ModeToggle />
-            </div>
+            </div> */}
+            <LeagueLeaders />
           </div>
         </BrowserRouter>
       </ThemeProvider>

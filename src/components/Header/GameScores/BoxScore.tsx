@@ -32,10 +32,20 @@ const BoxScore = ({ game = 'Hello' }) => {
     return (
       <div className="font-medium">
         <p className="text-center text-sm font-medium mb-3">TOP SCORERS</p>
-        <div className="flex items-center gap-10">
-          <TeamTopScorer />
+        <div className="flex items-center gap-6">
+          <TeamTopScorer
+            firstName={'Tyrese'}
+            lastName={'Haliburton'}
+            points={34}
+            playerID={1630169}
+          />
           <div className="border-l-2 h-16"> </div>
-          <TeamTopScorer />
+          <TeamTopScorer
+            firstName={'Donovan'}
+            lastName={'Mitchell'}
+            points={24}
+            playerID={1628378}
+          />
         </div>
       </div>
     );

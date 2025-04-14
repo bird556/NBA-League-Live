@@ -1,6 +1,21 @@
 import React from 'react';
 
-const TeamTopScorer = () => {
+interface PlayerProps {
+  firstName: string;
+  lastName: string;
+  points: number;
+  playerID: number;
+  // teamID?: number; // Optional prop with default value
+}
+
+const TeamTopScorer = ({
+  firstName,
+  lastName,
+  points,
+  playerID,
+}: PlayerProps) => {
+  let first = firstName;
+  console.log(first[0]);
   return (
     <>
       <div className="flex flex-col ">
@@ -9,12 +24,12 @@ const TeamTopScorer = () => {
           {/* IMAGE */}
           <img
             className="h-12 w-16 rounded-full cursor-pointer"
-            src="https://cdn.nba.com/headshots/nba/latest/1040x760/1630169.png"
+            src={`https://cdn.nba.com/headshots/nba/latest/1040x760/${playerID}.png`}
             alt=""
           />
           <div>
-            <p className="text-center text-xs">T.Haliburton</p>
-            <p className="text-center text-xs">37 PTS</p>
+            <p className="text-center text-xs">{`${firstName[0].toUpperCase()}.${lastName}`}</p>
+            <p className="text-center text-xs">{points} PTS</p>
           </div>
         </div>
       </div>

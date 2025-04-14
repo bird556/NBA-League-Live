@@ -2,6 +2,7 @@ import { Box } from 'lucide-react';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import BoxScore from './Header/GameScores/BoxScore';
+import { ModeToggle } from './mode-toggle';
 
 const BoxScoreTemp = ({ game }) => {
   console.log('BoxScore game:', game);
@@ -50,9 +51,13 @@ const HeaderScores = () => {
   if (error) return <div>Error: {error}</div>;
   return (
     <>
-      <div className="border-b-2 p-5 flex items-center w-fit">
-        <div className="flex justify-center items-center p-2 max-w-40">
+      <div className="border-b-2 p-5 flex gap-2 items-center w-full relative h-80">
+        <div
+          className="grid content-stretch items-end justify-items-center
+         p-2 max-w-40 h-full relative"
+        >
           <p className="text-center font-bold text-4xl">April 13th 2025</p>
+          <ModeToggle />
         </div>
         <div className="flex justify-evenly">
           <BoxScore />
